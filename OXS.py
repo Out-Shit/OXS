@@ -96,6 +96,7 @@ if __name__ == "__main__":
         init_options(options.proxy, options.cookie, options.ua, options.referer)
         result = scan_page(options.url if options.url.startswith("http") else "http://%s" % options.url, options.data)
         print("\nscan results: %s vulnerabilities found" % ("possible" if result else "no"))
+        print("\npress CTRL+C to end")
         exec(open('plugin.exec.xss.oxs.py').read())
     else:
         parser.print_help()
